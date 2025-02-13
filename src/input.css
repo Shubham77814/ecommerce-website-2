@@ -1,0 +1,159 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=League+Spartan:wght@100..900&display=swap");
+@import "tailwindcss";
+
+@theme {
+  /*========== Colors ==========*/
+  /* Color mode HSL(hue, saturation, lightness) */
+  --color-main-color: hsl(176, 88%, 27%);
+  --color-first-color-alt: hsl(129, 44%, 94%);
+  --color-second-color: hsl(34, 94%, 87%);
+  --color-title-color: hsl(0, 0%, 13%);
+  --color-text-color: hsl(154, 13%, 32%);
+  --color-text-color-light: hsl(60, 1%, 56%);
+  --color-body-color: hsl(0, 0%, 100%);
+  --color-container-color: hsl(0, 0%, 93%);
+  --color-border-color: hsl(129, 36%, 85%);
+  --color-border-color-alt: hsl(113, 15%, 90%);
+  /* --color-newsletter-color: hsl(166, 23%, 74%)  */
+  --color-shubham: hsl(166, 23%, 74%);
+
+  /*========== Font and typography ==475c53========*/
+  /* .5rem = 8px | 1rem = 16px ... */
+  --font-body: "Lato", sans-serif;
+  --font-second: "Spartan", sans-serif;
+
+  --text-big-size: 3.5rem;
+  --text-h1-size: 2.75rem;
+  --text-h2-size: 2rem;
+  --text-h3-size: 1.75rem;
+  --text-h4-size: 1.375rem;
+  --text-large-size: 1.275rem;
+  --text-normal-size: 1rem;
+  --text-small-size: 0.875rem;
+  --text-smaller-size: 0.75rem;
+  --text-tiny-size: 0.6875rem;
+
+  --default-transition-duration: 0.4s;
+  --default-transition-timing-function: cubic-bezier(0, 0, 0.05, 1);
+}
+
+@layer {
+  /*=============== REUSABLE CSS CLASSES ===============*/
+  body {
+    @apply font-body;
+  }
+  .container {
+    @apply max-w-[1320px] p-3 mx-auto;
+  }
+
+  .form-input {
+    @apply p-4 h-[45px] rounded-l-sm;
+  }
+
+  .section-lg {
+    @apply py-16;
+  }
+
+  .section {
+    @apply py-8;
+  }
+
+  .section-title {
+    @apply mb-6;
+  }
+  /* .grid{
+    @apply gap-6
+  } */
+
+  #home__container{
+    grid-template-columns: 5fr, 7fr;
+  }
+ 
+
+  #deals1 {
+    background-image: url("./img/deals-1.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+
+  #deals2 {
+    background-image: url("./img/deals-2.png");
+    background-size: cover;
+    background-position: center;
+  }
+  
+  #countdown__time{
+    position: relative;
+  }
+ 
+ }
+ #countdown__time::after{
+  content: ":";
+  font-size: var(--text-large-size);
+  font-weight: 600;
+  color: var(--color-main-color);
+  position: absolute;
+  top: 15%;
+  right: -25%;
+
+ }
+
+
+
+@media screen and (max-width: 1400px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  @layer{
+
+  
+  :root {
+    --text-big-size: 2.2rem;
+    --text-h1-size: 2rem;
+    --text-h2-size: 1.375rem;
+    --text-h3-size: 1.25rem;
+    --text-h4-size: 1.125rem;
+    --text-large-size: 1rem;
+    --text-normal-size: 0.9375rem;
+    --text-small-size: 0.8125rem;
+    --text-smaller-size: 0.625rem;
+    --text-tiny-size: 0.625rem;
+  }
+
+}
+
+  .container {
+    @apply max-w-[960px];
+  }
+
+  #header-top {
+    display: none;
+  }
+
+  #nav {
+    height: 5.5rem;
+  }
+
+  #nav-link {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .container {
+    @apply max-w-[740px];
+  }
+}
+@media screen and (max-width: 768px) {
+  .container {
+    @apply max-w-[540px];
+  }
+}
+@media screen and (max-width: 576px) {
+}
+@media screen and (max-width: 350px) {
+}
