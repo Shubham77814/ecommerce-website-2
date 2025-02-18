@@ -5,35 +5,295 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!--=============== FLATICON ===============-->
-    <link rel="stylesheet" href="" />
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/uicons-regular-straight/css/uicons-regular-straight.css"
+    />
 
     <!--=============== SWIPER CSS ===============-->
     <link rel="stylesheet" href="" />
 
     <!--=============== CSS ===============-->
-    <link rel="stylesheet" href="" />
+    <link rel="stylesheet" href="./src/output.css" />
+
 
     <title>Ecommerce Website</title>
   </head>
   <body>
     <!--=============== HEADER ===============-->
-    <header class="header"></header>
+    <header class="header">
+      <div id="header-top" class="bg-first-color-alt border-b border-main-color py-[0.875rem]">
+        <div class="container flex justify-between items-center  text-small-size leading-6">
+          <div class="text-text-color">
+            <span class="mr-8">(+01) -2345</span>
+            <span >Our Location</span>
+          </div>
+          <p class="font-semibold text-text-color-light ">Super Value Deals - Save more with cupons</p>
+          <a href="login-register.html" class="text-text-color">Log In / Sign Up</a>
+        </div>
+      </div>
+
+      <div id="nav" class="container flex items-center justify-between">
+        <a href="index.html">
+          <img src="./src/img/logo.svg" alt="" class="w-30 max-w-full ">
+        </a>
+
+        <div id="nav-link" class="flex justify-between items-center ml-10 flex-1 ">
+          <ul class="flex justify-center items-center gap-10  font-bold text-normal-size ">
+            <li><a href="index.html" class="text-main-color ">Home</a></li>
+            <li><a href="shop.html" class="hover:text-main-color">shop</a></li>
+            <li><a href="accounts.html" class="hover:text-main-color" >My Account</a></li>
+            <li><a href="compare.html" class="hover:text-main-color" >Compare</a></li>
+            <li><a href="login-register.html" class="hover:text-main-color">Login</a></li>
+          </ul>
+
+          <div class="flex  relative items-center">
+            <input type="text" class=" form-input border-2 border-border-color-alt   text-small-size text-[#475c53] w-[340px] relative outline-none" placeholder="search for item ">
+            <button class="absolute top-[24%] right-[1.25rem]">
+            <img src="./src/img/search.png" class="w-[19px] h-[22px]" alt="">
+          </button>
+          </div>
+        </div>
+
+        <div id="actions-btn" class="flex ml-1 gap-5 items-center">
+          <a href="wishlist.html" class="flex relative ">
+            <img src="./src/img/icon-heart.svg" alt="" class="w-6 ">
+            <span class="w-4.5 h-4.5 absolute -right-2.5 -top-2.5 text-center bg-main-color rounded-full text-white text-tiny-size leading-4.5">3</span>
+          </a>
+
+          <a href="wishlist.html" class="flex relative ">
+            <img src="./src/img/icon-cart.svg" alt="" class="w-6 ">
+            <span class="w-4.5 h-4.5 absolute -right-2.5 -top-2.5 text-center  bg-main-color rounded-full text-white text-tiny-size leading-4.5">3</span>
+          </a>
+        </div>
+
+      </div>
+
+    </header>
 
     <!--=============== MAIN ===============-->
     <main class="main">
       <!--=============== BREADCRUMB ===============-->
-      <section class="breadcrumb"></section>
+      <section class="breadcrumb  py-6 bg-container-color ">
+        <div class="container flex items-center text-small-size text-text-color gap-3">
+          <a href="index.html" class="">Home</a>
+          <span>></span>
+          <span>Shop</span>
+          <span>></span>
+          <span>Cart</span>
+         </div>
+      </section>
 
       <!--=============== CART ===============-->
-      <section class="cart"></section>
+      <section class="cart section-lg container">
+        <div class="table-container">
+          <table class="table w-full mb-8">
+            <tr class="border-t border-b border-border-color-alt text-text-color text-normal-size">
+                <th>Images</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Subtotal</th>
+                <th>Remove</th>
+            </tr>
+
+            <tr class="border-b border-border-color-alt">
+              <td id="table_image" class="text-center "><img src="./src/img/product-2-1.jpg" class="w-20 mx-auto"></td>
+              <td>
+                <h3 id="table_name" class="font-semibold text-small-size text-main-color">J Crew Mercantile Women's Short-Sleeve</h3>
+                <p id="table_description" class="text-small-size text-text-color max-w-[250px] mx-auto">Maboriosam in a tonto nesciung eget distney magndapibus</p>
+              </td>
+              <td id="table_price">
+                <span class="text-small-size text-text-color">$110</span>
+              </td>
+              <td id="table_stock">
+                <input type="number" class="border border-border-color max-w-[80px] pl-4 p-2 outline-none rounded-sm text-text-color" value="1">
+              </td>
+              <td id="table_subtotal">
+                <span class="text-small-size text-text-color">$110</span>
+              </td>                
+              <td>
+                <i class="fi fi-rs-trash table__trash text-text-color"></i>
+              </td>
+            </tr>
+
+            <tr class="border-b border-border-color-alt">
+              <td id="table_image" class="text-center "><img src="./src/img/product-5-1.jpg" class="w-20 mx-auto"></td>
+              <td>
+                <h3 id="table_name" class="font-semibold text-small-size text-main-color">J Crew Mercantile Women's Short-Sleeve</h3>
+                <p id="table_description" class="text-small-size text-text-color max-w-[250px] mx-auto">Maboriosam in a tonto nesciung eget distney magndapibus</p>
+              </td>
+              <td id="table_price">
+                <span class="text-small-size text-text-color">$110</span>
+              </td>
+              <td id="table_stock">
+                <input type="number" class="border border-border-color max-w-[80px] pl-4 p-2 outline-none rounded-sm text-text-color" value="1">
+              </td>
+              <td id="table_subtotal">
+                <span class="text-small-size text-text-color">$110</span>
+              </td>                
+              <td>
+                <i class="fi fi-rs-trash table__trash text-text-color"></i>
+              </td>
+            </tr>
+
+            <tr class="border-b border-border-color-alt">
+              <td id="table_image" class="text-center "><img src="./src/img/product-13-1.jpg" class="w-20 mx-auto"></td>
+              <td>
+                <h3 id="table_name" class="font-semibold text-small-size text-main-color">Purse</h3>
+                <p id="table_description" class="text-small-size text-text-color max-w-[250px] mx-auto">Maboriosam in a tonto nesciung eget distney magndapibus</p>
+              </td>
+              <td id="table_price">
+                <span class="text-small-size text-text-color">$110</span>
+              </td>
+              <td id="table_stock">
+                <input type="number" class="border border-border-color max-w-[80px] pl-4 p-2 outline-none rounded-sm text-text-color" value="1">
+              </td>
+              <td id="table_subtotal">
+                <span class="text-small-size text-text-color">$110</span>
+              </td>                 
+              <td>
+                <i class="fi fi-rs-trash table__trash text-text-color"></i>
+              </td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="table-actions flex justify-end gap-6 mt-6">
+          <a href="cart.html" class="px-7 bg-main-color text-small-size rounded-sm text-white font-second font-bold h-[45px] leading-[45px] inline-flex border-2 border-main-color hover:bg-transparent hover:text-main-color transition-all transition-[cubic-bezier(0, 0, 0.05, 1)] duration-400">Update Cart</a>
+          <a href="cart.html" class="px-7 bg-main-color text-small-size rounded-sm text-white font-second font-bold h-[45px] leading-[45px] inline-flex border-2 border-main-color hover:bg-transparent hover:text-main-color transition-all transition-[cubic-bezier(0, 0, 0.05, 1)] duration-400">Continue Shopping</a>
+        </div>
+
+        <!-- <div class="divider my-12 relative" >
+          <i class="fi fi-rs-fingerprint text-text-color-light text-large-size px-8 z-10"></i>
+        </div> -->
+
+        <div class="grid gap-6 grid-cols-2">
+          <div>
+            <h3 class="text-large-size text-title-color font-semibold font-secondc mb-6">Calculate Shipping</h3>
+            <form action="" class="flex flex-col gap-4">
+              <input type="text" class="h-[45px] p-4 w-full outline-none border-2 border-border-color-alt rounded-sm text-small-size text-text-color font-medium" placeholder="State/Country">
+              <div class="flex gap-6">
+                <input type="text" class="h-[45px] p-4 w-full outline-none border-2 border-border-color-alt rounded-sm text-small-size text-text-color font-medium" placeholder="City">
+                <input type="text" class="h-[45px] p-4 w-full outline-none border-2 border-border-color-alt rounded-sm text-small-size text-text-color font-medium" placeholder="Postal Code / Zip code">
+              </div>
+              <div>
+                <button class="px-7 bg-main-color text-small-size rounded-sm text-white font-second font-bold h-[40px] leading-[38px] inline-flex border-2 border-main-color hover:bg-transparent hover:text-main-color transition-all transition-[cubic-bezier(0, 0, 0.05, 1)] duration-400">Update</button>
+              </div>
+              
+            </form>
+          </div>
+          
+          <div class="border border-border-color-alt rounded-sm p-7">
+            <h3 class="text-large-size text-title-color font-semibold font-secondc mb-6">Calculate Shipping</h3>
+            <table class="table mb-4">
+              <tr>
+                <th>Cart Subtotal</th>
+                <td><span>$240</span></td>
+              </tr>
+              <tr>
+                <th>Cart Subtotal</th>
+                <td><span>$40</span></td>
+              </tr>
+              <tr>
+                <th>Cart Subtotal</th>
+                <td>$280.00</td>
+              </tr>
+            </table>
+            <a href="./checkout.html" class="px-7 bg-main-color text-small-size rounded-sm text-white font-second font-bold h-[40px] leading-[38px] inline-flex border-2 border-main-color hover:bg-transparent hover:text-main-color transition-all transition-[cubic-bezier(0, 0, 0.05, 1)] duration-400">Process To checkout</a>
+          </div>
+        </div>
+      </section>
 
       <!--=============== NEWSLETTER ===============-->
-      <section class="newsletter"></section>
+      <section class="newsletter section bg-shubham">
+        <div class="container grid grid-rows-1 lg:grid-cols-[3.5fr_3.5fr_5fr] items-center gap-12">
+          <h3 class="flex items-center text-large-size font-semibold gap-4 font-second">
+            <img src="./src/img/icon-email.svg" class="w-10">
+            Sign up to Newsletter
+          </h3> 
+
+          <p class="text-small-size font-second text-center text-title-color font-semibold hidden lg:block">...and receive $25 coupon for first shopping.</p>
+          
+          <form action="" class="flex">
+            <input type="text" placeholder="Enter your email" class="h-12 w-full px-5 text-small-size bg-body-color outline-none rounded-l-sm">
+            <button type="submit" class="px-8 bg-title-color text-small-size text-body-color tracking-[0.5px] font-medium cursor-pointer rounded-r-sm">Subscribe</button>
+          </form> 
+        </div>
+      </section>
     </main>
 
     <!--=============== FOOTER ===============-->
-    <footer class="footer"></footer>
+    <footer class="footer container">
+      <div id="footer__container" class="py-10 border-b-1 border-border-color-alt grid gap-6 grid-cols-1 lg:grid-cols-[4.5fr_2fr_2fr_3.5fr]">
+        <div id="footer__content" >
+          <a href="index.html" class="">
+            <img src="./src/img/logo.svg" alt="" class="w-30 h-auto max-w-full ">
+          </a>
 
+          <h4 class="leading-[1rem] mt-5 mb-2.5 text-small-size font-second font-semibold text-text-color-light">Contact</h4>
+          <p class="text-text-color text-normal-size mb-1"><span class="font-semibold">Address:</span>562 Wellington Road, Street 32, San Franscisco</p>
+          <p class="text-text-color text-normal-size mb-1"><span class="font-semibold" >Phone:</span>+977 9845098440</p>
+          <p class="text-text-color text-normal-size mb-1"><span class="font-semibold">Hours:</span> 9:00 - 5:00, Mon - Sat</p>
+
+          <div id="footer__social">
+              <h4 class="leading-[1rem] mt-7.5 mb-2.5 text-small-size font-second font-semibold text-text-color-light">Follow Me</h4>
+              <div class="flex items-center gap-1">
+                <a href="#">
+                  <img src="./src/img/icon-facebook.svg" class="w-5 opacity-70" alt="">
+                </a>
+                <a href="#">
+                  <img src="./src/img/icon-twitter.svg" class="w-5 opacity-70" alt="">
+                </a>
+                <a href="#">
+                  <img src="./src/img/icon-pinterest.svg" class="w-5 opacity-70" alt="">
+                </a>
+                <a href="#">
+                  <img src="./src/img/icon-instagram.svg" class="w-5 opacity-70" alt="">
+                </a>
+                <a href="#">
+                  <img src="./src/img/icon-youtube.svg" class="w-5 opacity-70" alt="">
+                </a>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div id="footer__content">
+          <h3 class="text-large-size font-second leading-[1.5rem] text-title-color font-semibold mt-4 mb-5">Address</h3>
+          <ul>
+            <li><a href="#" class="text-small-size leading-[1rem] block text-title-color mb-4 cursor-pointer hover:ml-1 hover:text-main-color transition-all transition-[cubic-bezier(0, 0, 0.05, 1)] duration-300 ">About Us</a></li>
+            <li><a href="#" class="text-small-size leading-[1rem] block text-title-color mb-4 cursor-pointer hover:ml-1 hover:text-main-color transition-all transition-[cubic-bezier(0, 0, 0.05, 1)] duration-300 ">Delivery Information</a></li>
+            <li><a href="#" class="text-small-size leading-[1rem] block text-title-color mb-4 cursor-pointer hover:ml-1 hover:text-main-color transition-all transition-[cubic-bezier(0, 0, 0.05, 1)] duration-300 ">Privacy Policy</a></li>
+            <li><a href="#" class="text-small-size leading-[1rem] block text-title-color mb-4 cursor-pointer hover:ml-1 hover:text-main-color transition-all transition-[cubic-bezier(0, 0, 0.05, 1)] duration-300 ">Terms & Conditions</a></li>
+            <li><a href="#" class="text-small-size leading-[1rem] block text-title-color mb-4 cursor-pointer hover:ml-1 hover:text-main-color transition-all transition-[cubic-bezier(0, 0, 0.05, 1)] duration-300 ">Contact Us</a></li>
+            <li><a href="#" class="text-small-size leading-[1rem] block text-title-color mb-4 cursor-pointer hover:ml-1 hover:text-main-color transition-all transition-[cubic-bezier(0, 0, 0.05, 1)] duration-300 ">Support Center</a></li>  
+         </ul>
+        </div>
+
+        <div id="footer__content">
+          <h3 class="text-large-size leading-[1.5rem] font-second text-title-color font-semibold mt-4 mb-5">Address</h3>
+          <ul>
+            <li><a  href="#"  class="text-small-size leading-[1rem] block text-title-color mb-4 cursor-pointer hover:ml-1 hover:text-main-color transition-all transition-[cubic-bezier(0, 0, 0.05, 1)] duration-300 ">Sign In</a></li>
+            <li><a  href="#"  class="text-small-size leading-[1rem] block text-title-color mb-4 cursor-pointer hover:ml-1 hover:text-main-color transition-all transition-[cubic-bezier(0, 0, 0.05, 1)] duration-300 ">View Cart</a></li>
+            <li><a  href="./wishlist.html"  class="text-small-size leading-[1rem] block text-title-color mb-4 cursor-pointer hover:ml-1 hover:text-main-color transition-all transition-[cubic-bezier(0, 0, 0.05, 1)] duration-300 ">My wishlist</a></li>
+            <li><a href="#"  class="text-small-size leading-[1rem] block text-title-color mb-4 cursor-pointer hover:ml-1 hover:text-main-color transition-all transition-[cubic-bezier(0, 0, 0.05, 1)] duration-300 ">Track My Order</a></li>
+            <li><a  href="#"  class="text-small-size leading-[1rem] block text-title-color mb-4 cursor-pointer hover:ml-1 hover:text-main-color transition-all transition-[cubic-bezier(0, 0, 0.05, 1)] duration-300 ">Help</a></li>
+            <li><a  href="#"  class="text-small-size leading-[1rem] block text-title-color mb-4 cursor-pointer hover:ml-1 hover:text-main-color transition-all transition-[cubic-bezier(0, 0, 0.05, 1)] duration-300 ">Order</a></li> 
+         </ul>
+        </div>
+
+        <div id="footer__content">
+          <h3 class="text-large-size font-second leading-[1.5rem] text-title-color font-semibold mt-4 mb-5">Secured Payment Gateways</h3>
+          <img src="./src/img/payment-method.png">
+        </div>
+      </div>
+      
+      <div class="py-5 flex flex-col lg:flex-row lg:justify-between items-center text-text-color-light text-small-size">
+        <p class="">© Shubham Chauhan. All rights reserved</p>
+        <span>Designed by Shubham Chauhan</span>
+      </div>
+    </footer>
     <!--=============== SWIPER JS ===============-->
     <script src=""></script>
 

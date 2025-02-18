@@ -9,7 +9,7 @@
   --color-first-color-alt: hsl(129, 44%, 94%);
   --color-second-color: hsl(34, 94%, 87%);
   --color-title-color: hsl(0, 0%, 13%);
-  --color-text-color: hsl(154, 13%, 32%);
+  --color-text-color: hsl(154, 13%, 32%); 
   --color-text-color-light: hsl(60, 1%, 56%);
   --color-body-color: hsl(0, 0%, 100%);
   --color-container-color: hsl(0, 0%, 93%);
@@ -62,9 +62,6 @@
   .section-title {
     @apply mb-6;
   }
-  /* .grid{
-    @apply gap-6
-  } */
 
   #home__container{
     grid-template-columns: 5fr, 7fr;
@@ -99,7 +96,80 @@
 
  }
 
+ /* ===================== CART ================ */
+ .table-container{
+  overflow-x: auto;
+ }
 
+ .table{
+  table-layout: fixed;
+ }
+
+ .table tr th,
+ .table tr td{
+  border-block: 1px solid var(--color-border-color-alt);
+  padding: 0.5rem;
+  text-align: center;
+ }
+
+ .table tr th:nth-child(1),
+ .table tr td:nth-child(1){
+  width: 216px;
+ }
+
+ 
+.table tr th:nth-child(1),
+.table tr td:nth-child(1) {
+  width: 216px;
+}
+.table tr th:nth-child(2),
+.table tr td:nth-child(2) {
+  width: 400px;
+}
+.table tr th:nth-child(3),
+.table tr td:nth-child(3) {
+  width: 108px;
+}
+.table tr th:nth-child(4),
+.table tr td:nth-child(4) {
+  width: 220px;
+}
+.table tr th:nth-child(5),
+.table tr td:nth-child(5) {
+  width: 200px;
+}
+.table tr th:nth-child(6),
+.table tr td:nth-child(6) {
+  width: 152px;
+}
+
+.order_table tr th,
+.order_table tr td{
+  padding: 0.5rem;
+  text-align: center;
+  border: 1px solid var(--color-border-color-alt);
+}
+
+.divider::before{
+  content:"";
+  position: absolute;
+  top:50%;
+  left:0px;
+  width: 100%;
+  z-index: 9;
+  border: 1px solid var(--color-border-color-alt);
+}
+ /* ===================== DETAILS ================ */
+ #info table tr td,
+ #info table tr th{
+  border: 1px solid var(--color-border-color-alt);
+  padding-inline: 20px;
+  padding-block: 10px;
+  color: var(--color-text-color);
+  font-size: var(--text-normal-size);
+  text-align: left;
+  font-weight: 500;
+ }
 
 @media screen and (max-width: 1400px) {
   .container {
@@ -109,8 +179,6 @@
 
 @media screen and (max-width: 1200px) {
   @layer{
-
-  
   :root {
     --text-big-size: 2.2rem;
     --text-h1-size: 2rem;
@@ -123,7 +191,6 @@
     --text-smaller-size: 0.625rem;
     --text-tiny-size: 0.625rem;
   }
-
 }
 
   .container {
