@@ -11,7 +11,10 @@
     />
 
     <!--=============== SWIPER CSS ===============-->
-    <link rel="stylesheet" href="" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
 
     <!--=============== CSS ===============-->
     <link rel="stylesheet" href="./src/output.css" />
@@ -22,7 +25,7 @@
   <body>
     <!--=============== HEADER ===============-->
     <header class="header">
-      <div id="header-top" class="bg-first-color-alt border-b border-main-color py-[0.875rem]">
+      <div id="header-top" class="bg-first-color-alt border-b border-main-color py-[0.875rem] hidden xl:block">
         <div class="container flex justify-between items-center  text-small-size leading-6">
           <div class="text-text-color">
             <span class="mr-8">(+01) -2345</span>
@@ -35,14 +38,14 @@
 
       <div id="nav" class="container flex items-center justify-between">
         <a href="index.html">
-          <img src="./src/img/logo.svg" alt="" class="w-30 max-w-full ">
+          <img src="./src/img/logo.svg" alt="" class="w-29 md:w-30 max-w-full ">
         </a>
 
-        <div id="nav-link" class="flex justify-between items-center ml-10 flex-1 ">
+        <div id="nav-link" class="hidden xl:flex justify-between items-center ml-10 flex-1">
           <ul class="flex justify-center items-center gap-10  font-bold text-normal-size ">
-            <li><a href="index.html" class=" hover:text-main-color ">Home</a></li>
+            <li><a href="index.html" class="text-main-color ">Home</a></li>
             <li><a href="shop.html" class="hover:text-main-color">shop</a></li>
-            <li><a href="accounts.html" class="text-main-color" >My Account</a></li>
+            <li><a href="accounts.html" class="hover:text-main-color" >My Account</a></li>
             <li><a href="compare.html" class="hover:text-main-color" >Compare</a></li>
             <li><a href="login-register.html" class="hover:text-main-color">Login</a></li>
           </ul>
@@ -65,6 +68,10 @@
             <img src="./src/img/icon-cart.svg" alt="" class="w-6 ">
             <span class="w-4.5 h-4.5 absolute -right-2.5 -top-2.5 text-center  bg-main-color rounded-full text-white text-tiny-size leading-4.5">3</span>
           </a>
+
+          <div id="nav__menu" class="xl:hidden cursor-pointer">
+            <img src="./src/img/menu-burger.svg" class="w-6">
+          </div>
         </div>
       </div>
     </header>
@@ -83,8 +90,8 @@
       <!--=============== ACCOUNTS ===============-->
       <section class="accounts section-lg">
         <div class="container grid grid-cols-[4fr_8fr] gap-6">
-          <div class="rounded-sm border border-border-color-alt h-fit">
-            <p class="px-8 py-4 border-b border-border-color-alt bg-main-color rounded-t-sm flex gap-2.5 items-center text-body-color text-small-size cursor-pointer" data-target="#dashboard"><i class="fi fi-rs-settings-sliders"></i>Dashboard</p>
+          <div class="rounded-sm border border-border-color-alt h-fit tab-btn">
+            <p class="px-8 py-4 border-b border-border-color-alt bg-main-color rounded-t-sm flex gap-2.5 items-center text-body-color text-small-size cursor-pointer active-tab" data-target="#dashboard"><i class="fi fi-rs-settings-sliders"></i>Dashboard</p>
             <p class="px-8 py-4 border-b border-border-color-alt flex gap-2.5 items-center text-title-color text-small-size cursor-pointer" data-target="#orders"><i class="fi fi-rs-shopping-bag"></i>Orders</p>
             <p class="px-8 py-4 border-b border-border-color-alt flex gap-2.5 items-center text-title-color text-small-size cursor-pointer" data-target="#update-profile"><i class="fi fi-rs-user"></i>Update Profile</p>
             <p class="px-8 py-4 border-b border-border-color-alt flex gap-2.5 items-center text-title-color text-small-size cursor-pointer" data-target="#my-address"><i class="fi fi-rs-marker"></i>My address</p>
@@ -92,13 +99,13 @@
             <p class="px-8 py-4 flex gap-3 items-center text-title-color text-small-size cursor-pointer" data-target="#orders"><i class="fi fi-rs-exit"></i>Logout</p>
           </div>
 
-          <div class="tab-body ">
-            <div id="dashboard" class="border border-border-color-alt">
+          <div class="tab-body tab-item">
+            <div id="dashboard" content class="active-tab border border-border-color-alt">
              <h3 class="p-4 text-title-color font-second text-small-size font-semibold bg-container-color">Hello Shubie doo</h3>
              <p class="p-4 text-text-color text-normal-size font-normal">From your account dashboard. you can easily check & view your recent orders, manage your shipping and billing addresses and edit your password and account details.</p>
             </div>
 
-            <div id="orders" class="border border-border-color-alt">
+            <div id="orders" content class="border border-border-color-alt">
               <h3 class="p-4 text-title-color font-second text-small-size font-semibold bg-container-color">Your Orders</h3>
               <div class="p-4">
                 <table border="1" class="w-full">
@@ -146,7 +153,7 @@
               </div>
             </div>
 
-            <div id="update-profile" class="border border-border-color-alt">
+            <div id="update-profile" content class="border border-border-color-alt">
               <h3 class="p-4 text-title-color font-second text-small-size font-semibold bg-container-color">Update Profile </h3>
               <div class="p-4">
                 <form action="" class="flex flex-col gap-4">
@@ -156,7 +163,7 @@
               </div>
             </div>
 
-            <div id="my-address" class="border border-border-color-alt">
+            <div id="my-address" content class="border border-border-color-alt">
               <h3 class="p-4 text-title-color font-second text-small-size font-semibold bg-container-color">Shipping address</h3>
               <div class="p-4 text-text-color text-normal-size font-normal">
                 <p class="font-normal text-small-size">Pheta-4, Batara, Bara, Nepal</p>
@@ -165,7 +172,7 @@
               </div>
             </div>
 
-            <div id="change-password" class="border border-border-color-alt">
+            <div id="change-password" content class="border border-border-color-alt">
               <h3 class="p-4 text-title-color font-second text-small-size font-semibold bg-container-color">Change Password</h3>
               <div id="tab-body">
                 <form action="" class="p-4 flex flex-col gap-4">

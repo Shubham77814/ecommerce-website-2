@@ -63,10 +63,6 @@
     @apply mb-6;
   }
 
-  #home__container{
-    grid-template-columns: 5fr, 7fr;
-  }
- 
 
   #deals1 {
     background-image: url("./img/deals-1.jpg");
@@ -79,23 +75,129 @@
     background-size: cover;
     background-position: center;
   }
+
+  #countdown__time:not(:last-child)::after{
+    content: ":";
+    font-size: var(--text-large-size);
+    font-weight: 600;
+    color: var(--color-main-color);
+    position: absolute;
+    top: 15%;
+    right: -25%;
   
-  #countdown__time{
-    position: relative;
   }
+ }
  
+ .swiper{
+  overflow:initial;
  }
- #countdown__time::after{
-  content: ":";
-  font-size: var(--text-large-size);
-  font-weight: 600;
+ 
+ .swiper-button-next,
+ .swiper-button-prev{
+    top: -1.875rem; 
+   background-color: var(--color-first-color-alt);
+   border: 1px solid var(--color-border-color);
+   width: 30px;
+   height: 30px;
+   border-radius:50%;
+   color: var(--color-main-color);
+   font-size: var(--text-tiny-size); 
+}
+
+.swiper-button-prev{
+  left: initial;
+  right: 2.5rem;
+}
+
+.swiper-button-next{
+  right: 0;
+}
+
+ .swiper-button-next::after,
+ .swiper-button-prev::after{
+   content: "";
+ }
+
+  /* ===================== Product ================ */
+/* Active Tab */
+
+.tab-btn.active-tab {
   color: var(--color-main-color);
+  background-color: var(--color-second-color);
+}
+
+.tab-item:not(.active-tab) {
+  display: none;
+}
+
+.action-btn::before,
+.action-btn::after{
   position: absolute;
-  top: 15%;
-  right: -25%;
+  left: 50%;
+  opacity: 0;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transition: all 0.2s cubic-bezier(0.71, 1.7, 0.77, 1.24);
+  -webkit-transition: all 0.2s cubic-bezier(0.71, 1.7, 0.77, 1.24);
+  -moz-transition: all 0.2s cubic-bezier(0.71, 1.7, 0.77, 1.24);
+  -ms-transition: all 0.2s cubic-bezier(0.71, 1.7, 0.77, 1.24);
+  -o-transition: all 0.2s cubic-bezier(0.71, 1.7, 0.77, 1.24);
+}
 
+.action-btn::before{
+  content: "";
+  top: -2px;
+  border: .5rem solid transparent;
+  border-top-color: var(--color-main-color);
+}
+
+.action-btn::after{
+  content: attr(aria-label);
+  bottom:100%;
+  background-color: var(--color-main-color);
+  color: var(--color-body-color);
+  font-size: var(--text-tiny-size);
+  white-space: nowrap;
+  padding-inline: 0.625rem;
+  line-height: 2.58;
+  border-radius: 0.25rem;
+  -webkit-border-radius: 0.25rem;
+  -moz-border-radius: 0.25rem;
+  -ms-border-radius: 0.25rem;
+  -o-border-radius: 0.25rem;
+}
+
+.action-btn:hover::after,
+.action-btn:hover::before{
+  opacity: 1;
+  transform: translateX(-50%) translateY(-0.5rem);
+}
+
+.shadow-product{
+  box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.1);
+}
+
+/* ===================== Product ================ */
+
+
+
+ /* ===================== SHOWCASE ================ */
+ #showcase-title{
+  position: relative;
  }
-
+ #showcase-title::before{
+  content: "";
+  height: 2px;
+  width: 100px;
+  background-color: var(--color-main-color);
+  position: absolute;
+  bottom: -1px;
+  left: 0px;
+  
+ }
  /* ===================== CART ================ */
  .table-container{
   overflow-x: auto;
@@ -171,6 +273,9 @@
   font-weight: 500;
  }
 
+  /* ===================== SWIPER ================ */
+ 
+
 @media screen and (max-width: 1400px) {
   .container {
     max-width: 1140px;
@@ -197,9 +302,9 @@
     @apply max-w-[960px];
   }
 
-  #header-top {
+  /* #header-top {
     display: none;
-  }
+  } */
 
   #nav {
     height: 5.5rem;
@@ -208,19 +313,66 @@
   #nav-link {
     display: none;
   }
+
+
+
+  
 }
 
 @media screen and (max-width: 992px) {
   .container {
     @apply max-w-[740px];
   }
+  
+  
+  .table tr th:nth-child(1),
+  .table tr td:nth-child(1) {
+    width: 140px;
+  }
+  .table tr th:nth-child(2),
+  .table tr td:nth-child(2) {
+    width: 330px;
+  }
+  .table tr th:nth-child(3),
+  .table tr td:nth-child(3) {
+    width: 80px;
+  }
+  .table tr th:nth-child(4),
+  .table tr td:nth-child(4) {
+    width: 160px;
+  }
+  .table tr th:nth-child(5),
+  .table tr td:nth-child(5) {
+    width: 160px;
+  }
+  .table tr th:nth-child(6),
+  .table tr td:nth-child(6) {
+    width: 100px;
+  }
+
+  #footer__container{
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
 }
+
 @media screen and (max-width: 768px) {
   .container {
     @apply max-w-[540px];
   }
+
+  #footer__container{
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
+
 @media screen and (max-width: 576px) {
 }
+
 @media screen and (max-width: 350px) {
+  .action-btn {
+    width: 36px;
+    height: 36px;
+    line-height: 38px;
+  }
 }

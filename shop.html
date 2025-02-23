@@ -11,7 +11,10 @@
     />
 
     <!--=============== SWIPER CSS ===============-->
-    <link rel="stylesheet" href="" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
 
     <!--=============== CSS ===============-->
     <link rel="stylesheet" href="./src/output.css" />
@@ -22,7 +25,7 @@
   <body>
     <!--=============== HEADER ===============-->
     <header class="header">
-      <div id="header-top" class="bg-first-color-alt border-b border-main-color py-[0.875rem]">
+      <div id="header-top" class="bg-first-color-alt border-b border-main-color py-[0.875rem] hidden xl:block">
         <div class="container flex justify-between items-center  text-small-size leading-6">
           <div class="text-text-color">
             <span class="mr-8">(+01) -2345</span>
@@ -35,10 +38,10 @@
 
       <div id="nav" class="container flex items-center justify-between">
         <a href="index.html">
-          <img src="./src/img/logo.svg" alt="" class="w-30 max-w-full ">
+          <img src="./src/img/logo.svg" alt="" class="w-29 md:w-30 max-w-full ">
         </a>
 
-        <div id="nav-link" class="flex justify-between items-center ml-10 flex-1 ">
+        <div id="nav-link" class="hidden xl:flex justify-between items-center ml-10 flex-1">
           <ul class="flex justify-center items-center gap-10  font-bold text-normal-size ">
             <li><a href="index.html" class="text-main-color ">Home</a></li>
             <li><a href="shop.html" class="hover:text-main-color">shop</a></li>
@@ -66,6 +69,9 @@
             <span class="w-4.5 h-4.5 absolute -right-2.5 -top-2.5 text-center  bg-main-color rounded-full text-white text-tiny-size leading-4.5">3</span>
           </a>
 
+          <div id="nav__menu" class="xl:hidden cursor-pointer">
+            <img src="./src/img/menu-burger.svg" class="w-6">
+          </div>
         </div>
       </div>
     </header>
@@ -84,397 +90,407 @@
       <!--=============== PRODUCTS ===============-->
       <section class="products section-lg container">
         <p class="text-text-color text-normal-size mb-10">We found <span class="text-main-color font-semibold">688</span> items for you</p>
-        <div id="products-container" class="grid gap-6 grid-cols-4 relative">
-          <div id="product-item" class="flex flex-col px-3 pt-2.5 pb-2.5 border group border-border-color rounded-xl relative overflow-hidden ">
-                <div id="product-banner" class="relative flex flex-col justify-center items-center overflow-hidden rounded-2xl">
-                  <a href="#" id="product-images" class="relative  block  rounded-xl ">
-                    <img src="./src/img/product-1-1.jpg" class="rounded-xl group-hover:scale-110 transition-all transition-[cubic-bezier(0, 0, 0.05, 1)] duration-1500 opacity-100 group-hover:opacity-0">
-                    <img src="./src/img/product-1-2.jpg" class="rounded-xl group-hover:scale-110 transition-all transition-[cubic-bezier(0, 0, 0.05, 1)] duration-1500 absolute top-0 left-0 opacity-0 group-hover:opacity-100">
-                  </a>
-                                     
-                 <div id="product-action" class=" flex gap-2 justify-center opacity-0 group-hover:opacity-100 items-center absolute top-[50%] translate-[-50%,-50%] ">
-                    <a href="#" aria-label="Add to Cart" class="w-10 h-10 text-small-size text-text-color bg-first-color-alt rounded-full border-none flex items-center justify-center hover:bg-main-color hover:text-body-color ">
-                      <i class="fi fi-rs-eye"></i>
-                    </a>
+        <div id="products-container" class="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 relative">
+          <div id="product-item" class="flex flex-col border group border-border-color rounded-xl relative hover:shadow-product transition-all transition-[cubic-bezier(0, 0, 0.05, 1)] duration-400">
+            <div id="product-banner" class="relative px-3 pb-3 pt-2.5 flex flex-col justify-center items-center rounded-2xl">
+              <a href="#" id="product-images" class="relative  block overflow-hidden  rounded-xl ">
+                <img src="./src/img/product-1-1.jpg" class="rounded-xl group-hover:scale-110 transition-all transition-[cubic-bezier(0, 0, 0.05, 1)] duration-500 opacity-100 group-hover:opacity-0">
+                <img src="./src/img/product-1-2.jpg" class="rounded-xl group-hover:scale-110 transition-all transition-[cubic-bezier(0, 0, 0.05, 1)] duration-500 absolute top-0 left-0 opacity-0 group-hover:opacity-100">
+              </a>
+                                 
+              <div id="product-action" class=" flex gap-2 justify-center  items-center absolute top-[50%] translate-[-50%,-50%] opacity-0 group-hover:opacity-100 ">
+                <a href="#" id="action-btn"  aria-label="Add to Cart" class="action-btn w-10 h-10 relative leading-[42px]  text-center text-small-size text-text-color bg-first-color-alt rounded-full border-none hover:bg-main-color hover:text-body-color ">
+                  <i class="fi fi-rs-eye"></i>
+                </a>
 
-                    <a href="#" aria-label="Add to Cart" class="w-10 h-10 text-small-size text-text-color bg-first-color-alt rounded-full border-none flex items-center justify-center hover:bg-main-color hover:text-body-color ">
-                      <i class="fi fi-rs-heart"></i>
-                    </a>
-                    <a href="#" aria-label="Add to Cart" class="w-10 h-10 text-small-size text-text-color bg-first-color-alt rounded-full border-none flex items-center justify-center hover:bg-main-color hover:text-body-color ">
-                      <i class="fi fi-rs-shuffle"></i>
-                    </a>
-                  </div>
+                <a href="#" id="action-btn"  aria-label="Add to Cart" class="action-btn w-10 h-10 relative leading-[42px]  text-center text-small-size text-text-color bg-first-color-alt rounded-full border-none hover:bg-main-color hover:text-body-color ">
+                  <i class="fi fi-rs-heart"></i>
+                </a>
 
-                  <div id="hot-badge" class="absolute top-2 left-1 ">
-                    <span class=" border rounded-2xl p-2 text-tiny-size text-body-color bg-pink-500">Hot</span>
-                  </div>
-                </div>
-                <div id="product-content" class="mt-2">
-                  <span class="text-small-size text-text-color-light">Clothing</span>
-                  <a href="details.html" class="">
-                    <h3 class="mt-3 mb-2 text-lg font-semibold font-second">Colorful Pattern Shirts</h3>
-                  </a>
-                  <div id="product-ratings" class="mb-3 text-amber-500 t">
-                    <i class="fi fi-rs-star"></i>
-                    <i class="fi fi-rs-star"></i>
-                    <i class="fi fi-rs-star"></i>
-                    <i class="fi fi-rs-star"></i>
-                    <i class="fi fi-rs-star"></i>
-                  </div>
+                <a href="#" id="action-btn"  aria-label="Add to Cart" class="action-btn w-10 h-10 relative leading-[42px]  text-center text-small-size text-text-color bg-first-color-alt rounded-full border-none hover:bg-main-color hover:text-body-color ">
+                  <i class="fi fi-rs-shuffle"></i>
+                </a>
+              </div>
 
-                  <div id="product-price" class="flex gap-2 text-center">
-                    <span class="text-normal-size text-main-color font-semibold">$235</span>
-                    <span class="text-small-size text-text-color-light underline">$295</span>
-                  </div>
+              <div id="hot-badge" class="absolute top-5 left-5">
+                <span class=" border rounded-2xl p-1 border-none leading-4 text-tiny-size text-body-color bg-pink-500">Hot</span>
+              </div>
+            </div>
+            
+            <div id="product-content" class="px-5 pb-4.5 relative">
+              <span class="text-small-size text-text-color-light">Clothing</span>
+              <a href="details.html" class="">
+                <h3 class="mt-3 mb-2 text-normal-size leading-normal font-semibold font-second">Colorful Pattern Shirts</h3>
+              </a>
+              <div id="product-ratings" class="mb-3 text-amber-500 text-small-size">
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+              </div>
 
-                  <a href="#" aria-label="Add to Cart" class="w-10 h-10 text-small-size text-text-color bg-first-color-alt rounded-full border border-border-color flex items-center justify-center absolute bottom-[1.6rem] right-[1.25rem] hover:bg-main-color hover:text-body-color ">
-                    <i class="fi fi-rs-shopping-bag-add"></i>
-                  </a>
+              <div id="product-price" class="flex gap-2 text-center">
+                <span class="text-normal-size text-main-color font-semibold">$235</span>
+                <span class="text-small-size text-text-color-light underline">$295</span>
+              </div>
 
-                </div>
+              <a href="#" aria-label="Add to Cart" class="w-10 h-10 text-small-size text-text-color bg-first-color-alt rounded-full border border-border-color flex items-center justify-center absolute bottom-[1.6rem] right-[1.25rem] hover:bg-main-color hover:text-body-color action-btn ">
+                <i class="fi fi-rs-shopping-bag-add"></i>
+              </a>
+
+            </div>
+          </div>
+          
+          <div id="product-item" class="flex flex-col border group border-border-color rounded-xl relative hover:shadow-product transition-all transition-[cubic-bezier(0, 0, 0.05, 1)] duration-400">
+            <div id="product-banner" class="relative px-3 pb-3 pt-2.5 flex flex-col justify-center items-center rounded-2xl">
+              <a href="#" id="product-images" class="relative  block overflow-hidden  rounded-xl ">
+                <img src="./src/img/product-2-1.jpg" class="rounded-xl group-hover:scale-110 transition-all transition-[cubic-bezier(0, 0, 0.05, 1)] duration-1500 opacity-100 group-hover:opacity-0">
+                <img src="./src/img/product-2-2.jpg" class="rounded-xl group-hover:scale-110 transition-all transition-[cubic-bezier(0, 0, 0.05, 1)] duration-1500 absolute top-0 left-0 opacity-0 group-hover:opacity-100">
+              </a>
+                                 
+              <div id="product-action" class=" flex gap-2 justify-center  items-center absolute top-[50%] translate-[-50%,-50%] opacity-0 group-hover:opacity-100 ">
+                <a href="#" id="action-btn"  aria-label="Add to Cart" class="action-btn w-10 h-10 relative leading-[42px]  text-center text-small-size text-text-color bg-first-color-alt rounded-full border-none hover:bg-main-color hover:text-body-color ">
+                  <i class="fi fi-rs-eye"></i>
+                </a>
+
+                <a href="#" id="action-btn"  aria-label="Add to Cart" class="action-btn w-10 h-10 relative leading-[42px]  text-center text-small-size text-text-color bg-first-color-alt rounded-full border-none hover:bg-main-color hover:text-body-color ">
+                  <i class="fi fi-rs-heart"></i>
+                </a>
+
+                <a href="#" id="action-btn"  aria-label="Add to Cart" class="action-btn w-10 h-10 relative leading-[42px]  text-center text-small-size text-text-color bg-first-color-alt rounded-full border-none hover:bg-main-color hover:text-body-color ">
+                  <i class="fi fi-rs-shuffle"></i>
+                </a>
+              </div>
+
+              <div id="hot-badge" class="absolute top-5 left-5">
+                <span class=" border rounded-2xl p-1 border-none leading-4 text-tiny-size text-body-color bg-pink-500">Hot</span>
+              </div>
+            </div>
+
+            <div id="product-content" class="px-5 pb-4.5 relative">
+              <span class="text-small-size text-text-color-light">Clothing</span>
+              <a href="details.html" class="">
+                <h3 class="mt-3 mb-2 text-normal-size leading-normal font-semibold font-second">Colorful Pattern Shirts</h3>
+              </a>
+              <div id="product-ratings" class="mb-3 text-amber-500 text-small-size">
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+              </div>
+
+              <div id="product-price" class="flex gap-2 text-center">
+                <span class="text-normal-size text-main-color font-semibold">$235</span>
+                <span class="text-small-size text-text-color-light underline">$295</span>
+              </div>
+
+              <a href="#" aria-label="Add to Cart" class="w-10 h-10 text-small-size text-text-color bg-first-color-alt rounded-full border border-border-color flex items-center justify-center absolute bottom-[1.6rem] right-[1.25rem] hover:bg-main-color hover:text-body-color action-btn ">
+                <i class="fi fi-rs-shopping-bag-add"></i>
+              </a>
+
+            </div>
           </div>
 
-          <div id="product-item" class="flex flex-col px-3 pt-2.5 pb-2.5 border group border-border-color rounded-xl relative overflow-hidden ">
-                <div id="product-banner" class="relative flex flex-col justify-center items-center overflow-hidden rounded-2xl">
-                  <a href="#" id="product-images" class="relative  block  rounded-xl ">
-                    <img src="./src/img/product-2-1.jpg" class="rounded-xl group-hover:scale-110 transition-all transition-[cubic-bezier(0, 0, 0.05, 1)] duration-1500 opacity-100 group-hover:opacity-0">
-                    <img src="./src/img/product-2-2.jpg" class="rounded-xl group-hover:scale-110 transition-all transition-[cubic-bezier(0, 0, 0.05, 1)] duration-1500 absolute top-0 left-0 opacity-0 group-hover:opacity-100">
-                  </a>
-                                     
-                 <div id="product-action" class=" flex gap-2 justify-center opacity-0 group-hover:opacity-100 items-center absolute top-[50%] translate-[-50%,-50%] ">
-                    <a href="#" aria-label="Add to Cart" class="w-10 h-10 text-small-size text-text-color bg-first-color-alt rounded-full border-none flex items-center justify-center hover:bg-main-color hover:text-body-color ">
-                      <i class="fi fi-rs-eye"></i>
-                    </a>
+          <div id="product-item" class="flex flex-col border group border-border-color rounded-xl relative hover:shadow-product transition-all transition-[cubic-bezier(0, 0, 0.05, 1)] duration-400">
+            <div id="product-banner" class="relative px-3 pb-3 pt-2.5 flex flex-col justify-center items-center rounded-2xl">
+              <a href="#" id="product-images" class="relative  block overflow-hidden  rounded-xl ">
+                <img src="./src/img/product-3-1.jpg" class="rounded-xl group-hover:scale-110 transition-all transition-[cubic-bezier(0, 0, 0.05, 1)] duration-1500 opacity-100 group-hover:opacity-0">
+                <img src="./src/img/product-3-2.jpg" class="rounded-xl group-hover:scale-110 transition-all transition-[cubic-bezier(0, 0, 0.05, 1)] duration-1500 absolute top-0 left-0 opacity-0 group-hover:opacity-100">
+              </a>
+                                 
+              <div id="product-action" class=" flex gap-2 justify-center  items-center absolute top-[50%] translate-[-50%,-50%] opacity-0 group-hover:opacity-100 ">
+                <a href="#" id="action-btn"  aria-label="Add to Cart" class="action-btn w-10 h-10 relative leading-[42px]  text-center text-small-size text-text-color bg-first-color-alt rounded-full border-none hover:bg-main-color hover:text-body-color ">
+                  <i class="fi fi-rs-eye"></i>
+                </a>
 
-                    <a href="#" aria-label="Add to Cart" class="w-10 h-10 text-small-size text-text-color bg-first-color-alt rounded-full border-none flex items-center justify-center hover:bg-main-color hover:text-body-color ">
-                      <i class="fi fi-rs-heart"></i>
-                    </a>
-                    <a href="#" aria-label="Add to Cart" class="w-10 h-10 text-small-size text-text-color bg-first-color-alt rounded-full border-none flex items-center justify-center hover:bg-main-color hover:text-body-color ">
-                      <i class="fi fi-rs-shuffle"></i>
-                    </a>
-                  </div>
+                <a href="#" id="action-btn"  aria-label="Add to Cart" class="action-btn w-10 h-10 relative leading-[42px]  text-center text-small-size text-text-color bg-first-color-alt rounded-full border-none hover:bg-main-color hover:text-body-color ">
+                  <i class="fi fi-rs-heart"></i>
+                </a>
 
-                  <div id="hot-badge" class="absolute top-2 left-1 ">
-                    <span class=" border rounded-2xl p-2 text-tiny-size text-body-color bg-pink-500">Hot</span>
-                  </div>
-                </div>
-                <div id="product-content" class="mt-2">
-                  <span class="text-small-size text-text-color-light">Clothing</span>
-                  <a href="details.html" class="">
-                    <h3 class="mt-3 mb-2 text-lg font-semibold font-second">Colorful Pattern Shirts</h3>
-                  </a>
-                  <div id="product-ratings" class="mb-3 text-amber-500 t">
-                    <i class="fi fi-rs-star"></i>
-                    <i class="fi fi-rs-star"></i>
-                    <i class="fi fi-rs-star"></i>
-                    <i class="fi fi-rs-star"></i>
-                    <i class="fi fi-rs-star"></i>
-                  </div>
+                <a href="#" id="action-btn"  aria-label="Add to Cart" class="action-btn w-10 h-10 relative leading-[42px]  text-center text-small-size text-text-color bg-first-color-alt rounded-full border-none hover:bg-main-color hover:text-body-color ">
+                  <i class="fi fi-rs-shuffle"></i>
+                </a>
+              </div>
 
-                  <div id="product-price" class="flex gap-2 text-center">
-                    <span class="text-normal-size text-main-color font-semibold">$235</span>
-                    <span class="text-small-size text-text-color-light underline">$295</span>
-                  </div>
+              <div id="hot-badge" class="absolute top-5 left-5">
+                <span class=" border rounded-2xl p-1 border-none leading-4 text-tiny-size text-body-color bg-pink-500">Hot</span>
+              </div>
+            </div>
 
-                  <a href="#" aria-label="Add to Cart" class="w-10 h-10 text-small-size text-text-color bg-first-color-alt rounded-full border border-border-color flex items-center justify-center absolute bottom-[1.6rem] right-[1.25rem] hover:bg-main-color hover:text-body-color ">
-                    <i class="fi fi-rs-shopping-bag-add"></i>
-                  </a>
+            <div id="product-content" class="px-5 pb-4.5 relative">
+              <span class="text-small-size text-text-color-light">Clothing</span>
+              <a href="details.html" class="">
+                <h3 class="mt-3 mb-2 text-normal-size leading-normal font-semibold font-second">Colorful Pattern Shirts</h3>
+              </a>
+              <div id="product-ratings" class="mb-3 text-amber-500 text-small-size">
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+              </div>
 
-                </div>
+              <div id="product-price" class="flex gap-2 text-center">
+                <span class="text-normal-size text-main-color font-semibold">$235</span>
+                <span class="text-small-size text-text-color-light underline">$295</span>
+              </div>
+
+              <a href="#" aria-label="Add to Cart" class="w-10 h-10 text-small-size text-text-color bg-first-color-alt rounded-full border border-border-color flex items-center justify-center absolute bottom-[1.6rem] right-[1.25rem] hover:bg-main-color hover:text-body-color action-btn ">
+                <i class="fi fi-rs-shopping-bag-add"></i>
+              </a>
+            </div>
           </div>
 
-          <div id="product-item" class="flex flex-col px-3 pt-2.5 pb-2.5 border group border-border-color rounded-xl relative overflow-hidden ">
-                <div id="product-banner" class="relative flex flex-col justify-center items-center overflow-hidden rounded-2xl">
-                  <a href="#" id="product-images" class="relative  block  rounded-xl ">
-                    <img src="./src/img/product-3-1.jpg" class="rounded-xl group-hover:scale-110 transition-all transition-[cubic-bezier(0, 0, 0.05, 1)] duration-1500 opacity-100 group-hover:opacity-0">
-                    <img src="./src/img/product-3-2.jpg" class="rounded-xl group-hover:scale-110 transition-all transition-[cubic-bezier(0, 0, 0.05, 1)] duration-1500 absolute top-0 left-0 opacity-0 group-hover:opacity-100">
-                  </a>
-                                     
-                 <div id="product-action" class=" flex gap-2 justify-center opacity-0 group-hover:opacity-100 items-center absolute top-[50%] translate-[-50%,-50%] ">
-                    <a href="#" aria-label="Add to Cart" class="w-10 h-10 text-small-size text-text-color bg-first-color-alt rounded-full border-none flex items-center justify-center hover:bg-main-color hover:text-body-color ">
-                      <i class="fi fi-rs-eye"></i>
-                    </a>
+          <div id="product-item" class="flex flex-col border group border-border-color rounded-xl relative hover:shadow-product transition-all transition-[cubic-bezier(0, 0, 0.05, 1)] duration-400">
+            <div id="product-banner" class="relative px-3 pb-3 pt-2.5 flex flex-col justify-center items-center rounded-2xl">
+              <a href="#" id="product-images" class="relative  block overflow-hidden  rounded-xl ">
+                <img src="./src/img/product-4-2.jpg" class="rounded-xl group-hover:scale-110 transition-all transition-[cubic-bezier(0, 0, 0.05, 1)] duration-1500 absolute top-0 left-0 opacity-0 group-hover:opacity-100">
+                <img src="./src/img/product-4-1.jpg" class="rounded-xl group-hover:scale-110 transition-all transition-[cubic-bezier(0, 0, 0.05, 1)] duration-1500 opacity-100 group-hover:opacity-0">
+              </a>
+                                 
+              <div id="product-action" class=" flex gap-2 justify-center  items-center absolute top-[50%] translate-[-50%,-50%] opacity-0 group-hover:opacity-100 ">
+                <a href="#" id="action-btn"  aria-label="Add to Cart" class="action-btn w-10 h-10 relative leading-[42px]  text-center text-small-size text-text-color bg-first-color-alt rounded-full border-none hover:bg-main-color hover:text-body-color ">
+                  <i class="fi fi-rs-eye"></i>
+                </a>
 
-                    <a href="#" aria-label="Add to Cart" class="w-10 h-10 text-small-size text-text-color bg-first-color-alt rounded-full border-none flex items-center justify-center hover:bg-main-color hover:text-body-color ">
-                      <i class="fi fi-rs-heart"></i>
-                    </a>
-                    <a href="#" aria-label="Add to Cart" class="w-10 h-10 text-small-size text-text-color bg-first-color-alt rounded-full border-none flex items-center justify-center hover:bg-main-color hover:text-body-color ">
-                      <i class="fi fi-rs-shuffle"></i>
-                    </a>
-                  </div>
+                <a href="#" id="action-btn"  aria-label="Add to Cart" class="action-btn w-10 h-10 relative leading-[42px]  text-center text-small-size text-text-color bg-first-color-alt rounded-full border-none hover:bg-main-color hover:text-body-color ">
+                  <i class="fi fi-rs-heart"></i>
+                </a>
 
-                  <div id="hot-badge" class="absolute top-2 left-1 ">
-                    <span class=" border rounded-2xl p-2 text-tiny-size text-body-color bg-pink-500">Hot</span>
-                  </div>
-                </div>
-                <div id="product-content" class="mt-2">
-                  <span class="text-small-size text-text-color-light">Clothing</span>
-                  <a href="details.html" class="">
-                    <h3 class="mt-3 mb-2 text-lg font-semibold font-second">Colorful Pattern Shirts</h3>
-                  </a>
-                  <div id="product-ratings" class="mb-3 text-amber-500 t">
-                    <i class="fi fi-rs-star"></i>
-                    <i class="fi fi-rs-star"></i>
-                    <i class="fi fi-rs-star"></i>
-                    <i class="fi fi-rs-star"></i>
-                    <i class="fi fi-rs-star"></i>
-                  </div>
+                <a href="#" id="action-btn"  aria-label="Add to Cart" class="action-btn w-10 h-10 relative leading-[42px]  text-center text-small-size text-text-color bg-first-color-alt rounded-full border-none hover:bg-main-color hover:text-body-color ">
+                  <i class="fi fi-rs-shuffle"></i>
+                </a>
+              </div>
 
-                  <div id="product-price" class="flex gap-2 text-center">
-                    <span class="text-normal-size text-main-color font-semibold">$235</span>
-                    <span class="text-small-size text-text-color-light underline">$295</span>
-                  </div>
+              <div id="hot-badge" class="absolute top-5 left-5">
+                <span class=" border rounded-2xl p-1 border-none leading-4 text-tiny-size text-body-color bg-pink-500">Hot</span>
+              </div>
+            </div>
 
-                  <a href="#" aria-label="Add to Cart" class="w-10 h-10 text-small-size text-text-color bg-first-color-alt rounded-full border border-border-color flex items-center justify-center absolute bottom-[1.6rem] right-[1.25rem] hover:bg-main-color hover:text-body-color ">
-                    <i class="fi fi-rs-shopping-bag-add"></i>
-                  </a>
+            <div id="product-content" class="px-5 pb-4.5 relative">
+              <span class="text-small-size text-text-color-light">Clothing</span>
+              <a href="details.html" class="">
+                <h3 class="mt-3 mb-2 text-normal-size leading-normal font-semibold font-second">Colorful Pattern Shirts</h3>
+              </a>
+              <div id="product-ratings" class="mb-3 text-amber-500 text-small-size">
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+              </div>
 
-                </div>
+              <div id="product-price" class="flex gap-2 text-center">
+                <span class="text-normal-size text-main-color font-semibold">$235</span>
+                <span class="text-small-size text-text-color-light underline">$295</span>
+              </div>
+
+              <a href="#" aria-label="Add to Cart" class="w-10 h-10 text-small-size text-text-color bg-first-color-alt rounded-full border border-border-color flex items-center justify-center absolute bottom-[1.6rem] right-[1.25rem] hover:bg-main-color hover:text-body-color action-btn ">
+                <i class="fi fi-rs-shopping-bag-add"></i>
+              </a>
+            </div>
           </div>
 
-          <div id="product-item" class="flex flex-col px-3 pt-2.5 pb-2.5 border group border-border-color rounded-xl relative overflow-hidden ">
-                <div id="product-banner" class="relative flex flex-col justify-center items-center overflow-hidden rounded-2xl">
-                  <a href="#" id="product-images" class="relative  block  rounded-xl ">
-                    <img src="./src/img/product-4-1.jpg" class="rounded-xl group-hover:scale-110 transition-all transition-[cubic-bezier(0, 0, 0.05, 1)] duration-1500 opacity-100 group-hover:opacity-0">
-                    <img src="./src/img/product-4-2.jpg" class="rounded-xl group-hover:scale-110 transition-all transition-[cubic-bezier(0, 0, 0.05, 1)] duration-1500 absolute top-0 left-0 opacity-0 group-hover:opacity-100">
-                  </a>
-                                     
-                 <div id="product-action" class=" flex gap-2 justify-center opacity-0 group-hover:opacity-100 items-center absolute top-[50%] translate-[-50%,-50%] ">
-                    <a href="#" aria-label="Add to Cart" class="w-10 h-10 text-small-size text-text-color bg-first-color-alt rounded-full border-none flex items-center justify-center hover:bg-main-color hover:text-body-color ">
-                      <i class="fi fi-rs-eye"></i>
-                    </a>
+          <div id="product-item" class="flex flex-col border group border-border-color rounded-xl relative hover:shadow-product transition-all transition-[cubic-bezier(0, 0, 0.05, 1)] duration-400">
+            <div id="product-banner" class="relative px-3 pb-3 pt-2.5 flex flex-col justify-center items-center rounded-2xl">
+              <a href="#" id="product-images" class="relative  block overflow-hidden  rounded-xl ">
+                <img src="./src/img/product-5-2.jpg" class="rounded-xl group-hover:scale-110 transition-all transition-[cubic-bezier(0, 0, 0.05, 1)] duration-1500 absolute top-0 left-0 opacity-0 group-hover:opacity-100">
+                <img src="./src/img/product-5-1.jpg" class="rounded-xl group-hover:scale-110 transition-all transition-[cubic-bezier(0, 0, 0.05, 1)] duration-1500 opacity-100 group-hover:opacity-0">
+              </a>
+                                 
+              <div id="product-action" class=" flex gap-2 justify-center  items-center absolute top-[50%] translate-[-50%,-50%] opacity-0 group-hover:opacity-100 ">
+                <a href="#" id="action-btn"  aria-label="Add to Cart" class="action-btn w-10 h-10 relative leading-[42px]  text-center text-small-size text-text-color bg-first-color-alt rounded-full border-none hover:bg-main-color hover:text-body-color ">
+                  <i class="fi fi-rs-eye"></i>
+                </a>
 
-                    <a href="#" aria-label="Add to Cart" class="w-10 h-10 text-small-size text-text-color bg-first-color-alt rounded-full border-none flex items-center justify-center hover:bg-main-color hover:text-body-color ">
-                      <i class="fi fi-rs-heart"></i>
-                    </a>
-                    <a href="#" aria-label="Add to Cart" class="w-10 h-10 text-small-size text-text-color bg-first-color-alt rounded-full border-none flex items-center justify-center hover:bg-main-color hover:text-body-color ">
-                      <i class="fi fi-rs-shuffle"></i>
-                    </a>
-                  </div>
+                <a href="#" id="action-btn"  aria-label="Add to Cart" class="action-btn w-10 h-10 relative leading-[42px]  text-center text-small-size text-text-color bg-first-color-alt rounded-full border-none hover:bg-main-color hover:text-body-color ">
+                  <i class="fi fi-rs-heart"></i>
+                </a>
 
-                  <div id="hot-badge" class="absolute top-2 left-1 ">
-                    <span class=" border rounded-2xl p-2 text-tiny-size text-body-color bg-pink-500">Hot</span>
-                  </div>
-                </div>
-                <div id="product-content" class="mt-2">
-                  <span class="text-small-size text-text-color-light">Clothing</span>
-                  <a href="details.html" class="">
-                    <h3 class="mt-3 mb-2 text-lg font-semibold font-second">Colorful Pattern Shirts</h3>
-                  </a>
-                  <div id="product-ratings" class="mb-3 text-amber-500 t">
-                    <i class="fi fi-rs-star"></i>
-                    <i class="fi fi-rs-star"></i>
-                    <i class="fi fi-rs-star"></i>
-                    <i class="fi fi-rs-star"></i>
-                    <i class="fi fi-rs-star"></i>
-                  </div>
+                <a href="#" id="action-btn"  aria-label="Add to Cart" class="action-btn w-10 h-10 relative leading-[42px]  text-center text-small-size text-text-color bg-first-color-alt rounded-full border-none hover:bg-main-color hover:text-body-color ">
+                  <i class="fi fi-rs-shuffle"></i>
+                </a>
+              </div>
 
-                  <div id="product-price" class="flex gap-2 text-center">
-                    <span class="text-normal-size text-main-color font-semibold">$235</span>
-                    <span class="text-small-size text-text-color-light underline">$295</span>
-                  </div>
+              <div id="hot-badge" class="absolute top-5 left-5">
+                <span class=" border rounded-2xl p-1 border-none leading-4 text-tiny-size text-body-color bg-pink-500">Hot</span>
+              </div>
+            </div>
 
-                  <a href="#" aria-label="Add to Cart" class="w-10 h-10 text-small-size text-text-color bg-first-color-alt rounded-full border border-border-color flex items-center justify-center absolute bottom-[1.6rem] right-[1.25rem] hover:bg-main-color hover:text-body-color ">
-                    <i class="fi fi-rs-shopping-bag-add"></i>
-                  </a>
+            <div id="product-content" class="px-5 pb-4.5 relative">
+              <span class="text-small-size text-text-color-light">Clothing</span>
+              <a href="details.html" class="">
+                <h3 class="mt-3 mb-2 text-normal-size leading-normal font-semibold font-second">Colorful Pattern Shirts</h3>
+              </a>
+              <div id="product-ratings" class="mb-3 text-amber-500 text-small-size">
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+              </div>
 
-                </div>
+              <div id="product-price" class="flex gap-2 text-center">
+                <span class="text-normal-size text-main-color font-semibold">$235</span>
+                <span class="text-small-size text-text-color-light underline">$295</span>
+              </div>
+
+              <a href="#" aria-label="Add to Cart" class="w-10 h-10 text-small-size text-text-color bg-first-color-alt rounded-full border border-border-color flex items-center justify-center absolute bottom-[1.6rem] right-[1.25rem] hover:bg-main-color hover:text-body-color action-btn ">
+                <i class="fi fi-rs-shopping-bag-add"></i>
+              </a>
+            </div>
           </div>
 
-          <div id="product-item" class="flex flex-col px-3 pt-2.5 pb-2.5 border group border-border-color rounded-xl relative overflow-hidden ">
-                <div id="product-banner" class="relative flex flex-col justify-center items-center overflow-hidden rounded-2xl">
-                  <a href="#" id="product-images" class="relative  block  rounded-xl ">
-                    <img src="./src/img/product-5-1.jpg" class="rounded-xl group-hover:scale-110 transition-all transition-[cubic-bezier(0, 0, 0.05, 1)] duration-1500 opacity-100 group-hover:opacity-0">
-                    <img src="./src/img/product-5-2.jpg" class="rounded-xl group-hover:scale-110 transition-all transition-[cubic-bezier(0, 0, 0.05, 1)] duration-1500 absolute top-0 left-0 opacity-0 group-hover:opacity-100">
-                  </a>
-                                     
-                 <div id="product-action" class=" flex gap-2 justify-center opacity-0 group-hover:opacity-100 items-center absolute top-[50%] translate-[-50%,-50%] ">
-                    <a href="#" aria-label="Add to Cart" class="w-10 h-10 text-small-size text-text-color bg-first-color-alt rounded-full border-none flex items-center justify-center hover:bg-main-color hover:text-body-color ">
-                      <i class="fi fi-rs-eye"></i>
-                    </a>
+          <div id="product-item" class="flex flex-col border group border-border-color rounded-xl relative hover:shadow-product transition-all transition-[cubic-bezier(0, 0, 0.05, 1)] duration-400">
+            <div id="product-banner" class="relative px-3 pb-3 pt-2.5 flex flex-col justify-center items-center rounded-2xl">
+              <a href="#" id="product-images" class="relative  block overflow-hidden  rounded-xl ">
+                <img src="./src/img/product-6-2.jpg" class="rounded-xl group-hover:scale-110 transition-all transition-[cubic-bezier(0, 0, 0.05, 1)] duration-1500 absolute top-0 left-0 opacity-0 group-hover:opacity-100">
+                <img src="./src/img/product-6-1.jpg" class="rounded-xl group-hover:scale-110 transition-all transition-[cubic-bezier(0, 0, 0.05, 1)] duration-1500 opacity-100 group-hover:opacity-0">
+              </a>
+                                 
+              <div id="product-action" class=" flex gap-2 justify-center  items-center absolute top-[50%] translate-[-50%,-50%] opacity-0 group-hover:opacity-100 ">
+                <a href="#" id="action-btn"  aria-label="Add to Cart" class="action-btn w-10 h-10 relative leading-[42px]  text-center text-small-size text-text-color bg-first-color-alt rounded-full border-none hover:bg-main-color hover:text-body-color ">
+                  <i class="fi fi-rs-eye"></i>
+                </a>
 
-                    <a href="#" aria-label="Add to Cart" class="w-10 h-10 text-small-size text-text-color bg-first-color-alt rounded-full border-none flex items-center justify-center hover:bg-main-color hover:text-body-color ">
-                      <i class="fi fi-rs-heart"></i>
-                    </a>
-                    <a href="#" aria-label="Add to Cart" class="w-10 h-10 text-small-size text-text-color bg-first-color-alt rounded-full border-none flex items-center justify-center hover:bg-main-color hover:text-body-color ">
-                      <i class="fi fi-rs-shuffle"></i>
-                    </a>
-                  </div>
+                <a href="#" id="action-btn"  aria-label="Add to Cart" class="action-btn w-10 h-10 relative leading-[42px]  text-center text-small-size text-text-color bg-first-color-alt rounded-full border-none hover:bg-main-color hover:text-body-color ">
+                  <i class="fi fi-rs-heart"></i>
+                </a>
 
-                  <div id="hot-badge" class="absolute top-2 left-1 ">
-                    <span class=" border rounded-2xl p-2 text-tiny-size text-body-color bg-pink-500">Hot</span>
-                  </div>
-                </div>
-                <div id="product-content" class="mt-2">
-                  <span class="text-small-size text-text-color-light">Clothing</span>
-                  <a href="details.html" class="">
-                    <h3 class="mt-3 mb-2 text-lg font-semibold font-second">Colorful Pattern Shirts</h3>
-                  </a>
-                  <div id="product-ratings" class="mb-3 text-amber-500 t">
-                    <i class="fi fi-rs-star"></i>
-                    <i class="fi fi-rs-star"></i>
-                    <i class="fi fi-rs-star"></i>
-                    <i class="fi fi-rs-star"></i>
-                    <i class="fi fi-rs-star"></i>
-                  </div>
+                <a href="#" id="action-btn"  aria-label="Add to Cart" class="action-btn w-10 h-10 relative leading-[42px]  text-center text-small-size text-text-color bg-first-color-alt rounded-full border-none hover:bg-main-color hover:text-body-color ">
+                  <i class="fi fi-rs-shuffle"></i>
+                </a>
+              </div>
 
-                  <div id="product-price" class="flex gap-2 text-center">
-                    <span class="text-normal-size text-main-color font-semibold">$235</span>
-                    <span class="text-small-size text-text-color-light underline">$295</span>
-                  </div>
+              <div id="hot-badge" class="absolute top-5 left-5">
+                <span class=" border rounded-2xl p-1 border-none leading-4 text-tiny-size text-body-color bg-pink-500">Hot</span>
+              </div>
+            </div>
 
-                  <a href="#" aria-label="Add to Cart" class="w-10 h-10 text-small-size text-text-color bg-first-color-alt rounded-full border border-border-color flex items-center justify-center absolute bottom-[1.6rem] right-[1.25rem] hover:bg-main-color hover:text-body-color ">
-                    <i class="fi fi-rs-shopping-bag-add"></i>
-                  </a>
+            <div id="product-content" class="px-5 pb-4.5 relative">
+              <span class="text-small-size text-text-color-light">Clothing</span>
+              <a href="details.html" class="">
+                <h3 class="mt-3 mb-2 text-normal-size leading-normal font-semibold font-second">Colorful Pattern Shirts</h3>
+              </a>
+              <div id="product-ratings" class="mb-3 text-amber-500 text-small-size">
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+              </div>
 
-                </div>
+              <div id="product-price" class="flex gap-2 text-center">
+                <span class="text-normal-size text-main-color font-semibold">$235</span>
+                <span class="text-small-size text-text-color-light underline">$295</span>
+              </div>
+
+              <a href="#" aria-label="Add to Cart" class="w-10 h-10 text-small-size text-text-color bg-first-color-alt rounded-full border border-border-color flex items-center justify-center absolute bottom-[1.6rem] right-[1.25rem] hover:bg-main-color hover:text-body-color action-btn ">
+                <i class="fi fi-rs-shopping-bag-add"></i>
+              </a>
+            </div>
           </div>
 
-          <div id="product-item" class="flex flex-col px-3 pt-2.5 pb-2.5 border group border-border-color rounded-xl relative overflow-hidden ">
-                <div id="product-banner" class="relative flex flex-col justify-center items-center overflow-hidden rounded-2xl">
-                  <a href="#" id="product-images" class="relative  block  rounded-xl ">
-                    <img src="./src/img/product-6-1.jpg" class="rounded-xl group-hover:scale-110 transition-all transition-[cubic-bezier(0, 0, 0.05, 1)] duration-1500 opacity-100 group-hover:opacity-0">
-                    <img src="./src/img/product-6-2.jpg" class="rounded-xl group-hover:scale-110 transition-all transition-[cubic-bezier(0, 0, 0.05, 1)] duration-1500 absolute top-0 left-0 opacity-0 group-hover:opacity-100">
-                  </a>
-                                     
-                 <div id="product-action" class=" flex gap-2 justify-center opacity-0 group-hover:opacity-100 items-center absolute top-[50%] translate-[-50%,-50%] ">
-                    <a href="#" aria-label="Add to Cart" class="w-10 h-10 text-small-size text-text-color bg-first-color-alt rounded-full border-none flex items-center justify-center hover:bg-main-color hover:text-body-color ">
-                      <i class="fi fi-rs-eye"></i>
-                    </a>
+          <div id="product-item" class="flex flex-col border group border-border-color rounded-xl relative hover:shadow-product transition-all transition-[cubic-bezier(0, 0, 0.05, 1)] duration-400">
+            <div id="product-banner" class="relative px-3 pb-3 pt-2.5 flex flex-col justify-center items-center rounded-2xl">
+              <a href="#" id="product-images" class="relative  block overflow-hidden  rounded-xl ">
+                <img src="./src/img/product-7-2.jpg" class="rounded-xl group-hover:scale-110 transition-all transition-[cubic-bezier(0, 0, 0.05, 1)] duration-1500 absolute top-0 left-0 opacity-0 group-hover:opacity-100">
+                <img src="./src/img/product-7-1.jpg" class="rounded-xl group-hover:scale-110 transition-all transition-[cubic-bezier(0, 0, 0.05, 1)] duration-1500 opacity-100 group-hover:opacity-0">
+              </a>
+                                 
+              <div id="product-action" class=" flex gap-2 justify-center  items-center absolute top-[50%] translate-[-50%,-50%] opacity-0 group-hover:opacity-100 ">
+                <a href="#" id="action-btn"  aria-label="Add to Cart" class="action-btn w-10 h-10 relative leading-[42px]  text-center text-small-size text-text-color bg-first-color-alt rounded-full border-none hover:bg-main-color hover:text-body-color ">
+                  <i class="fi fi-rs-eye"></i>
+                </a>
 
-                    <a href="#" aria-label="Add to Cart" class="w-10 h-10 text-small-size text-text-color bg-first-color-alt rounded-full border-none flex items-center justify-center hover:bg-main-color hover:text-body-color ">
-                      <i class="fi fi-rs-heart"></i>
-                    </a>
-                    <a href="#" aria-label="Add to Cart" class="w-10 h-10 text-small-size text-text-color bg-first-color-alt rounded-full border-none flex items-center justify-center hover:bg-main-color hover:text-body-color ">
-                      <i class="fi fi-rs-shuffle"></i>
-                    </a>
-                  </div>
+                <a href="#" id="action-btn"  aria-label="Add to Cart" class="action-btn w-10 h-10 relative leading-[42px]  text-center text-small-size text-text-color bg-first-color-alt rounded-full border-none hover:bg-main-color hover:text-body-color ">
+                  <i class="fi fi-rs-heart"></i>
+                </a>
 
-                  <div id="hot-badge" class="absolute top-2 left-1 ">
-                    <span class=" border rounded-2xl p-2 text-tiny-size text-body-color bg-pink-500">Hot</span>
-                  </div>
-                </div>
-                <div id="product-content" class="mt-2">
-                  <span class="text-small-size text-text-color-light">Clothing</span>
-                  <a href="details.html" class="">
-                    <h3 class="mt-3 mb-2 text-lg font-semibold font-second">Colorful Pattern Shirts</h3>
-                  </a>
-                  <div id="product-ratings" class="mb-3 text-amber-500 t">
-                    <i class="fi fi-rs-star"></i>
-                    <i class="fi fi-rs-star"></i>
-                    <i class="fi fi-rs-star"></i>
-                    <i class="fi fi-rs-star"></i>
-                    <i class="fi fi-rs-star"></i>
-                  </div>
+                <a href="#" id="action-btn"  aria-label="Add to Cart" class="action-btn w-10 h-10 relative leading-[42px]  text-center text-small-size text-text-color bg-first-color-alt rounded-full border-none hover:bg-main-color hover:text-body-color ">
+                  <i class="fi fi-rs-shuffle"></i>
+                </a>
+              </div>
 
-                  <div id="product-price" class="flex gap-2 text-center">
-                    <span class="text-normal-size text-main-color font-semibold">$235</span>
-                    <span class="text-small-size text-text-color-light underline">$295</span>
-                  </div>
+              <div id="hot-badge" class="absolute top-5 left-5">
+                <span class=" border rounded-2xl p-1 border-none leading-4 text-tiny-size text-body-color bg-pink-500">Hot</span>
+              </div>
+            </div>
 
-                  <a href="#" aria-label="Add to Cart" class="w-10 h-10 text-small-size text-text-color bg-first-color-alt rounded-full border border-border-color flex items-center justify-center absolute bottom-[1.6rem] right-[1.25rem] hover:bg-main-color hover:text-body-color ">
-                    <i class="fi fi-rs-shopping-bag-add"></i>
-                  </a>
+            <div id="product-content" class="px-5 pb-4.5 relative">
+              <span class="text-small-size text-text-color-light">Clothing</span>
+              <a href="details.html" class="">
+                <h3 class="mt-3 mb-2 text-normal-size leading-normal font-semibold font-second">Colorful Pattern Shirts</h3>
+              </a>
+              <div id="product-ratings" class="mb-3 text-amber-500 text-small-size">
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+              </div>
 
-                </div>
+              <div id="product-price" class="flex gap-2 text-center">
+                <span class="text-normal-size text-main-color font-semibold">$235</span>
+                <span class="text-small-size text-text-color-light underline">$295</span>
+              </div>
+
+              <a href="#" aria-label="Add to Cart" class="w-10 h-10 text-small-size text-text-color bg-first-color-alt rounded-full border border-border-color flex items-center justify-center absolute bottom-[1.6rem] right-[1.25rem] hover:bg-main-color hover:text-body-color action-btn ">
+                <i class="fi fi-rs-shopping-bag-add"></i>
+              </a>
+            </div>
           </div>
 
-          <div id="product-item" class="flex flex-col px-3 pt-2.5 pb-2.5 border group border-border-color rounded-xl relative overflow-hidden ">
-                <div id="product-banner" class="relative flex flex-col justify-center items-center overflow-hidden rounded-2xl">
-                  <a href="#" id="product-images" class="relative  block  rounded-xl ">
-                    <img src="./src/img/product-7-1.jpg" class="rounded-xl group-hover:scale-110 transition-all transition-[cubic-bezier(0, 0, 0.05, 1)] duration-1500 opacity-100 group-hover:opacity-0">
-                    <img src="./src/img/product-7-2.jpg" class="rounded-xl group-hover:scale-110 transition-all transition-[cubic-bezier(0, 0, 0.05, 1)] duration-1500 absolute top-0 left-0 opacity-0 group-hover:opacity-100">
-                  </a>
-                                     
-                 <div id="product-action" class=" flex gap-2 justify-center opacity-0 group-hover:opacity-100 items-center absolute top-[50%] translate-[-50%,-50%] ">
-                    <a href="#" aria-label="Add to Cart" class="w-10 h-10 text-small-size text-text-color bg-first-color-alt rounded-full border-none flex items-center justify-center hover:bg-main-color hover:text-body-color ">
-                      <i class="fi fi-rs-eye"></i>
-                    </a>
+          <div id="product-item" class="flex flex-col border group border-border-color rounded-xl relative hover:shadow-product transition-all transition-[cubic-bezier(0, 0, 0.05, 1)] duration-400">
+            <div id="product-banner" class="relative px-3 pb-3 pt-2.5 flex flex-col justify-center items-center rounded-2xl">
+              <a href="#" id="product-images" class="relative  block overflow-hidden  rounded-xl ">
+                <img src="./src/img/product-8-2.jpg" class="rounded-xl group-hover:scale-110 transition-all transition-[cubic-bezier(0, 0, 0.05, 1)] duration-1500 absolute top-0 left-0 opacity-0 group-hover:opacity-100">
+                <img src="./src/img/product-8-1.jpg" class="rounded-xl group-hover:scale-110 transition-all transition-[cubic-bezier(0, 0, 0.05, 1)] duration-1500 opacity-100 group-hover:opacity-0">
+              </a>
+                                 
+              <div id="product-action" class=" flex gap-2 justify-center  items-center absolute top-[50%] translate-[-50%,-50%] opacity-0 group-hover:opacity-100 ">
+                <a href="#" id="action-btn"  aria-label="Add to Cart" class="action-btn w-10 h-10 relative leading-[42px]  text-center text-small-size text-text-color bg-first-color-alt rounded-full border-none hover:bg-main-color hover:text-body-color ">
+                  <i class="fi fi-rs-eye"></i>
+                </a>
 
-                    <a href="#" aria-label="Add to Cart" class="w-10 h-10 text-small-size text-text-color bg-first-color-alt rounded-full border-none flex items-center justify-center hover:bg-main-color hover:text-body-color ">
-                      <i class="fi fi-rs-heart"></i>
-                    </a>
-                    <a href="#" aria-label="Add to Cart" class="w-10 h-10 text-small-size text-text-color bg-first-color-alt rounded-full border-none flex items-center justify-center hover:bg-main-color hover:text-body-color ">
-                      <i class="fi fi-rs-shuffle"></i>
-                    </a>
-                  </div>
+                <a href="#" id="action-btn"  aria-label="Add to Cart" class="action-btn w-10 h-10 relative leading-[42px]  text-center text-small-size text-text-color bg-first-color-alt rounded-full border-none hover:bg-main-color hover:text-body-color ">
+                  <i class="fi fi-rs-heart"></i>
+                </a>
 
-                  <div id="hot-badge" class="absolute top-2 left-1 ">
-                    <span class=" border rounded-2xl p-2 text-tiny-size text-body-color bg-pink-500">Hot</span>
-                  </div>
-                </div>
-                <div id="product-content" class="mt-2">
-                  <span class="text-small-size text-text-color-light">Clothing</span>
-                  <a href="details.html" class="">
-                    <h3 class="mt-3 mb-2 text-lg font-semibold font-second">Colorful Pattern Shirts</h3>
-                  </a>
-                  <div id="product-ratings" class="mb-3 text-amber-500 t">
-                    <i class="fi fi-rs-star"></i>
-                    <i class="fi fi-rs-star"></i>
-                    <i class="fi fi-rs-star"></i>
-                    <i class="fi fi-rs-star"></i>
-                    <i class="fi fi-rs-star"></i>
-                  </div>
+                <a href="#" id="action-btn"  aria-label="Add to Cart" class="action-btn w-10 h-10 relative leading-[42px]  text-center text-small-size text-text-color bg-first-color-alt rounded-full border-none hover:bg-main-color hover:text-body-color ">
+                  <i class="fi fi-rs-shuffle"></i>
+                </a>
+              </div>
 
-                  <div id="product-price" class="flex gap-2 text-center">
-                    <span class="text-normal-size text-main-color font-semibold">$235</span>
-                    <span class="text-small-size text-text-color-light underline">$295</span>
-                  </div>
+              <div id="hot-badge" class="absolute top-5 left-5">
+                <span class=" border rounded-2xl p-1 border-none leading-4 text-tiny-size text-body-color bg-pink-500">Hot</span>
+              </div>
+            </div>
 
-                  <a href="#" aria-label="Add to Cart" class="w-10 h-10 text-small-size text-text-color bg-first-color-alt rounded-full border border-border-color flex items-center justify-center absolute bottom-[1.6rem] right-[1.25rem] hover:bg-main-color hover:text-body-color ">
-                    <i class="fi fi-rs-shopping-bag-add"></i>
-                  </a>
+            <div id="product-content" class="px-5 pb-4.5 relative">
+              <span class="text-small-size text-text-color-light">Clothing</span>
+              <a href="details.html" class="">
+                <h3 class="mt-3 mb-2 text-normal-size leading-normal font-semibold font-second">Colorful Pattern Shirts</h3>
+              </a>
+              <div id="product-ratings" class="mb-3 text-amber-500 text-small-size">
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+              </div>
 
-                </div>
-          </div>
+              <div id="product-price" class="flex gap-2 text-center">
+                <span class="text-normal-size text-main-color font-semibold">$235</span>
+                <span class="text-small-size text-text-color-light underline">$295</span>
+              </div>
 
-          <div id="product-item" class="flex flex-col px-3 pt-2.5 pb-2.5 border group border-border-color rounded-xl relative overflow-hidden ">
-                <div id="product-banner" class="relative flex flex-col justify-center items-center overflow-hidden rounded-2xl">
-                  <a href="#" id="product-images" class="relative  block  rounded-xl ">
-                    <img src="./src/img/product-8-1.jpg" class="rounded-xl group-hover:scale-110 transition-all transition-[cubic-bezier(0, 0, 0.05, 1)] duration-1500 opacity-100 group-hover:opacity-0">
-                    <img src="./src/img/product-8-2.jpg" class="rounded-xl group-hover:scale-110 transition-all transition-[cubic-bezier(0, 0, 0.05, 1)] duration-1500 absolute top-0 left-0 opacity-0 group-hover:opacity-100">
-                  </a>
-                                     
-                 <div id="product-action" class=" flex gap-2 justify-center opacity-0 group-hover:opacity-100 items-center absolute top-[50%] translate-[-50%,-50%] ">
-                    <a href="#" aria-label="Add to Cart" class="w-10 h-10 text-small-size text-text-color bg-first-color-alt rounded-full border-none flex items-center justify-center hover:bg-main-color hover:text-body-color ">
-                      <i class="fi fi-rs-eye"></i>
-                    </a>
-
-                    <a href="#" aria-label="Add to Cart" class="w-10 h-10 text-small-size text-text-color bg-first-color-alt rounded-full border-none flex items-center justify-center hover:bg-main-color hover:text-body-color ">
-                      <i class="fi fi-rs-heart"></i>
-                    </a>
-                    <a href="#" aria-label="Add to Cart" class="w-10 h-10 text-small-size text-text-color bg-first-color-alt rounded-full border-none flex items-center justify-center hover:bg-main-color hover:text-body-color ">
-                      <i class="fi fi-rs-shuffle"></i>
-                    </a>
-                  </div>
-
-                  <div id="hot-badge" class="absolute top-2 left-1 ">
-                    <span class=" border rounded-2xl p-2 text-tiny-size text-body-color bg-pink-500">Hot</span>
-                  </div>
-                </div>
-                <div id="product-content" class="mt-2">
-                  <span class="text-small-size text-text-color-light">Clothing</span>
-                  <a href="details.html" class="">
-                    <h3 class="mt-3 mb-2 text-lg font-semibold font-second">Colorful Pattern Shirts</h3>
-                  </a>
-                  <div id="product-ratings" class="mb-3 text-amber-500 t">
-                    <i class="fi fi-rs-star"></i>
-                    <i class="fi fi-rs-star"></i>
-                    <i class="fi fi-rs-star"></i>
-                    <i class="fi fi-rs-star"></i>
-                    <i class="fi fi-rs-star"></i>
-                  </div>
-
-                  <div id="product-price" class="flex gap-2 text-center">
-                    <span class="text-normal-size text-main-color font-semibold">$235</span>
-                    <span class="text-small-size text-text-color-light underline">$295</span>
-                  </div>
-
-                  <a href="#" aria-label="Add to Cart" class="w-10 h-10 text-small-size text-text-color bg-first-color-alt rounded-full border border-border-color flex items-center justify-center absolute bottom-[1.6rem] right-[1.25rem] hover:bg-main-color hover:text-body-color ">
-                    <i class="fi fi-rs-shopping-bag-add"></i>
-                  </a>
-
-                </div>
+              <a href="#" aria-label="Add to Cart" class="w-10 h-10 text-small-size text-text-color bg-first-color-alt rounded-full border border-border-color flex items-center justify-center absolute bottom-[1.6rem] right-[1.25rem] hover:bg-main-color hover:text-body-color action-btn ">
+                <i class="fi fi-rs-shopping-bag-add"></i>
+              </a>
+            </div>
           </div>
         </div>
            
@@ -491,12 +507,14 @@
       
       <!--=============== NEWSLETTER ===============-->
       <section class="newsletter mt-8 py-3 bg-shubham">
-        <div class="container grid grid-rows-1 lg:grid-cols-[3.5fr_3.5fr_5fr] items-center gap-12">
+        <div class="container grid grid-rows-1 lg:grid-cols-[3.5fr_3.5fr_5fr] items-center gap-4 lg:gap-12">
           <h3 class="flex items-center text-large-size font-semibold gap-4">
             <img src="./src/img/icon-email.svg" class="w-10">
             Sign up to Newsletter
           </h3> 
+
           <p class="text-small-size font-second text-center text-title-color font-semibold hidden lg:block">...and receive $25 coupon for first shopping.</p>
+          
           <form action="" class="flex">
             <input type="text" placeholder="Enter your email" class="h-12 w-full px-5 text-small-size bg-body-color outline-none rounded-l-sm">
             <button type="submit" class="px-8 bg-title-color text-small-size text-body-color tracking-[0.5px] font-medium cursor-pointer rounded-r-sm">Subscribe</button>
@@ -507,7 +525,7 @@
 
     <!--=============== FOOTER ===============-->
     <footer class="footer container">
-      <div id="footer__container" class="py-10 border-b-1 border-border-color-alt grid gap-6 grid-cols-1 lg:grid-cols-[4.5fr_2fr_2fr_3.5fr]">
+      <div id="footer__container" class="py-10 border-b-1 border-border-color-alt grid gap-6 grid-cols-1 lg:grid-cols-2 xl:grid-cols-[4.5fr_2fr_2fr_3.5fr]">
         <div id="footer__content" >
           <a href="index.html" class="">
             <img src="./src/img/logo.svg" alt="" class="w-30 h-auto max-w-full ">
